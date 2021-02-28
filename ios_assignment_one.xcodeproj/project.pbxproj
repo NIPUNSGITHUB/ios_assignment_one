@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		FA88A0E925EBC098007341DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0E825EBC098007341DD /* AppDelegate.swift */; };
 		FA88A0EB25EBC098007341DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0EA25EBC098007341DD /* SceneDelegate.swift */; };
-		FA88A0ED25EBC098007341DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0EC25EBC098007341DD /* ViewController.swift */; };
-		FA88A0F025EBC098007341DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA88A0EE25EBC098007341DD /* Main.storyboard */; };
 		FA88A0F325EBC098007341DD /* ios_assignment_one.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0F125EBC098007341DD /* ios_assignment_one.xcdatamodeld */; };
 		FA88A0F525EBC09A007341DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA88A0F425EBC09A007341DD /* Assets.xcassets */; };
 		FA88A0F825EBC09A007341DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA88A0F625EBC09A007341DD /* LaunchScreen.storyboard */; };
+		FA88A11125EBC1F2007341DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10B25EBC1F2007341DD /* SignupViewController.swift */; };
+		FA88A11225EBC1F2007341DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10C25EBC1F2007341DD /* ViewController.swift */; };
+		FA88A11325EBC1F2007341DD /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10D25EBC1F2007341DD /* LocationViewController.swift */; };
+		FA88A11425EBC1F2007341DD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10E25EBC1F2007341DD /* ForgotPasswordViewController.swift */; };
+		FA88A11525EBC1F2007341DD /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10F25EBC1F2007341DD /* FoodViewController.swift */; };
+		FA88A12225EBC404007341DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA88A12125EBC404007341DD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA88A0E525EBC098007341DD /* ios_assignment_one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_assignment_one.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA88A0E825EBC098007341DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA88A0EA25EBC098007341DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA88A0EC25EBC098007341DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA88A0EF25EBC098007341DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA88A0F225EBC098007341DD /* ios_assignment_one.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_assignment_one.xcdatamodel; sourceTree = "<group>"; };
 		FA88A0F425EBC09A007341DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA88A0F725EBC09A007341DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA88A0F925EBC09A007341DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA88A10B25EBC1F2007341DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		FA88A10C25EBC1F2007341DD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA88A10D25EBC1F2007341DD /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		FA88A10E25EBC1F2007341DD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		FA88A10F25EBC1F2007341DD /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		FA88A12125EBC404007341DD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,44 @@
 		FA88A0E725EBC098007341DD /* ios_assignment_one */ = {
 			isa = PBXGroup;
 			children = (
+				FA88A10A25EBC1F2007341DD /* Controllers */,
+				FA88A11025EBC1F2007341DD /* Model */,
+				FA88A10225EBC1D9007341DD /* View */,
 				FA88A0E825EBC098007341DD /* AppDelegate.swift */,
 				FA88A0EA25EBC098007341DD /* SceneDelegate.swift */,
-				FA88A0EC25EBC098007341DD /* ViewController.swift */,
-				FA88A0EE25EBC098007341DD /* Main.storyboard */,
 				FA88A0F425EBC09A007341DD /* Assets.xcassets */,
-				FA88A0F625EBC09A007341DD /* LaunchScreen.storyboard */,
 				FA88A0F925EBC09A007341DD /* Info.plist */,
 				FA88A0F125EBC098007341DD /* ios_assignment_one.xcdatamodeld */,
 			);
 			path = ios_assignment_one;
+			sourceTree = "<group>";
+		};
+		FA88A10225EBC1D9007341DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA88A12125EBC404007341DD /* Main.storyboard */,
+				FA88A0F625EBC09A007341DD /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA88A10A25EBC1F2007341DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA88A10B25EBC1F2007341DD /* SignupViewController.swift */,
+				FA88A10C25EBC1F2007341DD /* ViewController.swift */,
+				FA88A10D25EBC1F2007341DD /* LocationViewController.swift */,
+				FA88A10E25EBC1F2007341DD /* ForgotPasswordViewController.swift */,
+				FA88A10F25EBC1F2007341DD /* FoodViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA88A11025EBC1F2007341DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +165,7 @@
 			files = (
 				FA88A0F825EBC09A007341DD /* LaunchScreen.storyboard in Resources */,
 				FA88A0F525EBC09A007341DD /* Assets.xcassets in Resources */,
-				FA88A0F025EBC098007341DD /* Main.storyboard in Resources */,
+				FA88A12225EBC404007341DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,8 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA88A0ED25EBC098007341DD /* ViewController.swift in Sources */,
+				FA88A11425EBC1F2007341DD /* ForgotPasswordViewController.swift in Sources */,
+				FA88A11325EBC1F2007341DD /* LocationViewController.swift in Sources */,
+				FA88A11225EBC1F2007341DD /* ViewController.swift in Sources */,
+				FA88A11525EBC1F2007341DD /* FoodViewController.swift in Sources */,
 				FA88A0E925EBC098007341DD /* AppDelegate.swift in Sources */,
+				FA88A11125EBC1F2007341DD /* SignupViewController.swift in Sources */,
 				FA88A0EB25EBC098007341DD /* SceneDelegate.swift in Sources */,
 				FA88A0F325EBC098007341DD /* ios_assignment_one.xcdatamodeld in Sources */,
 			);
@@ -150,14 +190,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA88A0EE25EBC098007341DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA88A0EF25EBC098007341DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA88A0F625EBC09A007341DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,6 +323,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				INFOPLIST_FILE = ios_assignment_one/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				INFOPLIST_FILE = ios_assignment_one/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
