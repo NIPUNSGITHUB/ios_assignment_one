@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3A8E7625EC1291001B832E /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A8E7525EC1291001B832E /* CartTableViewCell.swift */; };
 		FA88A0E925EBC098007341DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0E825EBC098007341DD /* AppDelegate.swift */; };
 		FA88A0EB25EBC098007341DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0EA25EBC098007341DD /* SceneDelegate.swift */; };
 		FA88A0F325EBC098007341DD /* ios_assignment_one.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0F125EBC098007341DD /* ios_assignment_one.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA3A8E7525EC1291001B832E /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableViewCell.swift; path = food/CartTableViewCell.swift; sourceTree = "<group>"; };
 		FA88A0E525EBC098007341DD /* ios_assignment_one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_assignment_one.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA88A0E825EBC098007341DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA88A0EA25EBC098007341DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FA88A10D25EBC1F2007341DD /* LocationViewController.swift */,
 				FA88A10E25EBC1F2007341DD /* ForgotPasswordViewController.swift */,
 				FA88A10F25EBC1F2007341DD /* FoodViewController.swift */,
+				FA3A8E7525EC1291001B832E /* CartTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				FA88A11425EBC1F2007341DD /* ForgotPasswordViewController.swift in Sources */,
 				FA88A11325EBC1F2007341DD /* LocationViewController.swift in Sources */,
 				FA88A11225EBC1F2007341DD /* ViewController.swift in Sources */,
+				FA3A8E7625EC1291001B832E /* CartTableViewCell.swift in Sources */,
 				FA88A11525EBC1F2007341DD /* FoodViewController.swift in Sources */,
 				FA88A0E925EBC098007341DD /* AppDelegate.swift in Sources */,
 				FA88A11125EBC1F2007341DD /* SignupViewController.swift in Sources */,
