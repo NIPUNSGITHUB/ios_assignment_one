@@ -436,14 +436,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ri1-be-DKH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="201" translatesAutoresizingMaskIntoConstraints="NO" id="cUk-LT-oH9">
+                                <rect key="frame" x="21" y="60" width="333.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0Z-FL-lg8">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaC-BU-Wvf">
+                                        <rect key="frame" x="277" y="0.0" width="56.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ri1-be-DKH">
+                                <rect key="frame" x="0.0" y="94" width="375" height="162"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="XjQ-h2-66T">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XjQ-h2-66T" id="8ld-LC-MFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XoS-IR-eLQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cUk-LT-oH9" firstAttribute="top" secondItem="XoS-IR-eLQ" secondAttribute="top" constant="60" id="5Qw-Vx-8VV"/>
+                            <constraint firstItem="cUk-LT-oH9" firstAttribute="centerX" secondItem="1Oj-5a-vHD" secondAttribute="centerX" id="OJ4-ds-r1G"/>
+                            <constraint firstItem="XoS-IR-eLQ" firstAttribute="bottom" secondItem="Ri1-be-DKH" secondAttribute="bottom" constant="362" id="SmP-la-9lv"/>
+                            <constraint firstItem="Ri1-be-DKH" firstAttribute="trailing" secondItem="XoS-IR-eLQ" secondAttribute="trailing" id="Zl9-qR-ry5"/>
+                            <constraint firstItem="Ri1-be-DKH" firstAttribute="top" secondItem="cUk-LT-oH9" secondAttribute="bottom" constant="13.5" id="d6s-Re-Sli"/>
+                            <constraint firstItem="Ri1-be-DKH" firstAttribute="leading" secondItem="XoS-IR-eLQ" secondAttribute="leading" id="mgP-ap-Le7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food" image="hamburger (1)" id="Bg5-XX-7MW">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
