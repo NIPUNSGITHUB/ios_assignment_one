@@ -9,6 +9,7 @@ import UIKit
 
 class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
+    @IBOutlet weak var lblItemCount: UILabel!
     @IBOutlet weak var tblFoodView: UITableView!
     @IBOutlet weak var tblFoodList: UITableView!
     //let healthyFoods = ["Apple", "Orange", "Pear", "Grapefruit", "Potato", "Tomato", "Leek", "Tangerine"]
@@ -125,11 +126,12 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
       }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        lblItemCount.text = String(healthyFoods.count)+" Items";
         if tableView == tblFoodView,
               let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CartTableViewCell {
                 cell.lblName.text = healthyFoods[indexPath.row]["name"];
                 cell.lblPrice.text = healthyFoods[indexPath.row]["price"];
+                
               return cell
           } else if tableView == tblFoodList,
               let cell = tableView.dequeueReusableCell(withIdentifier: "foodListItem") as? FoodListTableViewCell {
@@ -137,7 +139,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.lblFoodPrice.text =  foodsList[indexPath.row]["price"];
             cell.lblFoodDescription.text =  foodsList[indexPath.row]["description"];
             cell.lblDiscount.text =  foodsList[indexPath.row]["discount"];
-            var imageName = foodsList[indexPath.row]["image"];
+            let imageName = foodsList[indexPath.row]["image"];
             cell.listItemImage.image = UIImage(named: imageName!);
             
              
