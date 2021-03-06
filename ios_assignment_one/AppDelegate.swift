@@ -7,14 +7,17 @@
 
 import UIKit
 import CoreData
-
+import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+  //  let fdb = db();
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+    //    fdb.configure()
+        FirebaseApp.configure()
+       // FirebaseApp.configure()
         return true
     }
 

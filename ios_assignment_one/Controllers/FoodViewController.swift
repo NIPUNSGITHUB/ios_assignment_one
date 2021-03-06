@@ -6,12 +6,14 @@
 //
 
 import UIKit
-
+import Firebase
 class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    let fdb = db()
+   
     @IBOutlet weak var lblItemCount: UILabel!
     @IBOutlet weak var tblFoodView: UITableView!
     @IBOutlet weak var tblFoodList: UITableView!
+    var itemIndexPath = 0;
     //let healthyFoods = ["Apple", "Orange", "Pear", "Grapefruit", "Potato", "Tomato", "Leek", "Tangerine"]
     let healthyFoods = [
         [
@@ -43,6 +45,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let foodsList = [
         [
+            "id":"1",
             "name":"Apple",
             "description":"lipsum as it is sometimes known",
             "price":"100.00",
@@ -51,6 +54,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         ],
         [
+            "id":"2",
             "name":"Banana",
             "description":"lipsum as it is sometimes known",
             "price":"50.00",
@@ -58,6 +62,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             "image":"banana.png"
         ],
         [
+            "id":"3",
             "name":"Orange",
             "description":"lipsum as it is sometimes known",
             "price":"20.00",
@@ -65,6 +70,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             "image":"orange.png"
         ],
         [
+            "id":"4",
             "name":"Mango",
             "description":"lipsum as it is sometimes known",
             "price":"53.00",
@@ -72,6 +78,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             "image":"hamburger.png"
         ],
         [
+            "id":"5",
             "name":"Lemon",
             "description":"lipsum as it is sometimes known",
             "price":"100.00",
@@ -79,6 +86,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
             "image":"banana.png"
         ],
         [
+            "id":"6",
             "name":"Avacardo",
             "description":"lipsum as it is sometimes known",
             "price":"100.00",
@@ -93,13 +101,9 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tblFoodView.delegate = self;
         tblFoodView.dataSource = self;
-        
         tblFoodList.delegate = self;
         tblFoodList.dataSource = self;
-       
-        
-        // Do any additional setup after loading the view.
-    }
+     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
@@ -107,7 +111,15 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          print("You taped me");
+      
+        
+        if tableView == tblFoodList
+        {
+            itemIndexPath = indexPath.row;
+            performSegue(withIdentifier: "listtodetails", sender: self)
+            print(itemIndexPath)
+
+        }
       }
       
       
@@ -124,6 +136,19 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return section;
       }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let foodDetails = segue.destination as! FoodDetailsViewController;
+        let item = foodsList[itemIndexPath];
+        foodDetails.itemId = String(item["id"] ?? "null");
+        foodDetails.foodName = String(item["name"] ?? "null");
+        foodDetails.foodDesc = String(item["description"] ?? "..");
+        foodDetails.price = String(item["price"] ?? "..");
+        foodDetails.discount = String(item["discount"] ?? "..");
+        foodDetails.image = String(item["image"] ?? "..");
+       
+    }
+   
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         lblItemCount.text = String(healthyFoods.count)+" Items";
@@ -152,7 +177,8 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        cell.lblPrice.text = healthyFoods[indexPath.row]["price"];
 //        return cell
     }
-       
+    
+    
 }
 
 

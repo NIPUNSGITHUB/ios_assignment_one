@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		197AFF8CCB5E88F90875F5D9 /* Pods_ios_assignment_one.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3761D5CCAD23C0185A6A9FA /* Pods_ios_assignment_one.framework */; };
+		FA03A57525F33F020001B2EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA03A57425F33F020001B2EB /* GoogleService-Info.plist */; };
+		FA03A57825F346B10001B2EB /* FoodDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03A57725F346B10001B2EB /* FoodDetailsViewController.swift */; };
+		FA03A57B25F363CA0001B2EB /* db.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03A57A25F363CA0001B2EB /* db.swift */; };
 		FA2B459925ED53D40048F7B4 /* FoodListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B459825ED53D40048F7B4 /* FoodListTableViewCell.swift */; };
 		FA3A8E7625EC1291001B832E /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A8E7525EC1291001B832E /* CartTableViewCell.swift */; };
 		FA88A0E925EBC098007341DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A0E825EBC098007341DD /* AppDelegate.swift */; };
@@ -20,9 +24,16 @@
 		FA88A11425EBC1F2007341DD /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10E25EBC1F2007341DD /* ForgotPasswordViewController.swift */; };
 		FA88A11525EBC1F2007341DD /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88A10F25EBC1F2007341DD /* FoodViewController.swift */; };
 		FA88A12225EBC404007341DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA88A12125EBC404007341DD /* Main.storyboard */; };
+		FACEA81025F375B6003EF476 /* items.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA80F25F375B6003EF476 /* items.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2432ED9D53377D8A395A754F /* Pods-ios_assignment_one.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_assignment_one.debug.xcconfig"; path = "Target Support Files/Pods-ios_assignment_one/Pods-ios_assignment_one.debug.xcconfig"; sourceTree = "<group>"; };
+		96008A6D22175966C4A2B7A6 /* Pods-ios_assignment_one.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_assignment_one.release.xcconfig"; path = "Target Support Files/Pods-ios_assignment_one/Pods-ios_assignment_one.release.xcconfig"; sourceTree = "<group>"; };
+		A3761D5CCAD23C0185A6A9FA /* Pods_ios_assignment_one.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_assignment_one.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA03A57425F33F020001B2EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA03A57725F346B10001B2EB /* FoodDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsViewController.swift; sourceTree = "<group>"; };
+		FA03A57A25F363CA0001B2EB /* db.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = db.swift; sourceTree = "<group>"; };
 		FA2B459825ED53D40048F7B4 /* FoodListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListTableViewCell.swift; sourceTree = "<group>"; };
 		FA3A8E7525EC1291001B832E /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableViewCell.swift; path = food/CartTableViewCell.swift; sourceTree = "<group>"; };
 		FA88A0E525EBC098007341DD /* ios_assignment_one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_assignment_one.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +49,7 @@
 		FA88A10E25EBC1F2007341DD /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		FA88A10F25EBC1F2007341DD /* FoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		FA88A12125EBC404007341DD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FACEA80F25F375B6003EF476 /* items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = items.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197AFF8CCB5E88F90875F5D9 /* Pods_ios_assignment_one.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C1EEEDDF9220ACAE6FE1ED2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2432ED9D53377D8A395A754F /* Pods-ios_assignment_one.debug.xcconfig */,
+				96008A6D22175966C4A2B7A6 /* Pods-ios_assignment_one.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DBF37D225FAFDADBB74D079A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3761D5CCAD23C0185A6A9FA /* Pods_ios_assignment_one.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA88A0DC25EBC098007341DD = {
 			isa = PBXGroup;
 			children = (
 				FA88A0E725EBC098007341DD /* ios_assignment_one */,
 				FA88A0E625EBC098007341DD /* Products */,
+				7C1EEEDDF9220ACAE6FE1ED2 /* Pods */,
+				DBF37D225FAFDADBB74D079A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +109,7 @@
 				FA88A0EA25EBC098007341DD /* SceneDelegate.swift */,
 				FA88A0F425EBC09A007341DD /* Assets.xcassets */,
 				FA88A0F925EBC09A007341DD /* Info.plist */,
+				FA03A57425F33F020001B2EB /* GoogleService-Info.plist */,
 				FA88A0F125EBC098007341DD /* ios_assignment_one.xcdatamodeld */,
 			);
 			path = ios_assignment_one;
@@ -101,6 +134,7 @@
 				FA88A10F25EBC1F2007341DD /* FoodViewController.swift */,
 				FA3A8E7525EC1291001B832E /* CartTableViewCell.swift */,
 				FA2B459825ED53D40048F7B4 /* FoodListTableViewCell.swift */,
+				FA03A57725F346B10001B2EB /* FoodDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +142,8 @@
 		FA88A11025EBC1F2007341DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA03A57A25F363CA0001B2EB /* db.swift */,
+				FACEA80F25F375B6003EF476 /* items.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA88A0FC25EBC09A007341DD /* Build configuration list for PBXNativeTarget "ios_assignment_one" */;
 			buildPhases = (
+				5DC9B75B7B83CDFFC8CA2D3A /* [CP] Check Pods Manifest.lock */,
 				FA88A0E125EBC098007341DD /* Sources */,
 				FA88A0E225EBC098007341DD /* Frameworks */,
 				FA88A0E325EBC098007341DD /* Resources */,
+				62A2C60DB1E0C8C5F7510C80 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA88A0F825EBC09A007341DD /* LaunchScreen.storyboard in Resources */,
+				FA03A57525F33F020001B2EB /* GoogleService-Info.plist in Resources */,
 				FA88A0F525EBC09A007341DD /* Assets.xcassets in Resources */,
 				FA88A12225EBC404007341DD /* Main.storyboard in Resources */,
 			);
@@ -177,16 +216,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5DC9B75B7B83CDFFC8CA2D3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios_assignment_one-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62A2C60DB1E0C8C5F7510C80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_assignment_one/Pods-ios_assignment_one-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ios_assignment_one/Pods-ios_assignment_one-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ios_assignment_one/Pods-ios_assignment_one-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA88A0E125EBC098007341DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FA88A11425EBC1F2007341DD /* ForgotPasswordViewController.swift in Sources */,
+				FA03A57B25F363CA0001B2EB /* db.swift in Sources */,
 				FA88A11325EBC1F2007341DD /* LocationViewController.swift in Sources */,
 				FA88A11225EBC1F2007341DD /* ViewController.swift in Sources */,
+				FA03A57825F346B10001B2EB /* FoodDetailsViewController.swift in Sources */,
 				FA2B459925ED53D40048F7B4 /* FoodListTableViewCell.swift in Sources */,
 				FA3A8E7625EC1291001B832E /* CartTableViewCell.swift in Sources */,
+				FACEA81025F375B6003EF476 /* items.swift in Sources */,
 				FA88A11525EBC1F2007341DD /* FoodViewController.swift in Sources */,
 				FA88A0E925EBC098007341DD /* AppDelegate.swift in Sources */,
 				FA88A11125EBC1F2007341DD /* SignupViewController.swift in Sources */,
@@ -327,6 +411,7 @@
 		};
 		FA88A0FD25EBC09A007341DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2432ED9D53377D8A395A754F /* Pods-ios_assignment_one.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -346,6 +431,7 @@
 		};
 		FA88A0FE25EBC09A007341DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96008A6D22175966C4A2B7A6 /* Pods-ios_assignment_one.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
