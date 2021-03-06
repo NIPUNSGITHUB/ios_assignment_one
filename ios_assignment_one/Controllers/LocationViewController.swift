@@ -6,16 +6,31 @@
 //
 
 import UIKit
-
-class LocationViewController: UIViewController {
+import CoreLocation
+class LocationViewController: UIViewController , CLLocationManagerDelegate{
 
     @IBOutlet weak var btnAlowLocation: UIButton!
+    var lc:CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         btnAlowLocation.layer.cornerRadius = 17;
+        lc=CLLocationManager()
+        lc?.delegate=self
+        lc?.requestAlwaysAuthorization()
+        
         // Do any additional setup after loading the view.
     }
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            if CLLocationManager.isMonitoringAvailable(for: CLBeacon.self){
+                if CLLocationManager.isRangingAvailable(){
+                    
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
