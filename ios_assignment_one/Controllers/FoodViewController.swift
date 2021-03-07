@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 class FoodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     let fdb = db()
+    var cart = Cart();
    
     @IBOutlet weak var lblItemCount: UILabel!
     @IBOutlet weak var tblFoodView: UITableView!
@@ -103,7 +104,24 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         tblFoodView.dataSource = self;
         tblFoodList.delegate = self;
         tblFoodList.dataSource = self;
+        getCurrentCartItems();
      }
+    
+    func getCurrentCartItems() {
+        fdb.context.child("Cart").getData { (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                for item in snapshot.children{
+                    
+                }
+            }
+            else {
+                print("No data available")
+            }
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
@@ -124,6 +142,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
       
       
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
             if tableView == tblFoodView
             {
                 return healthyFoods.count;
@@ -154,6 +173,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
         lblItemCount.text = String(healthyFoods.count)+" Items";
         if tableView == tblFoodView,
               let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? CartTableViewCell {
+             
                 cell.lblName.text = healthyFoods[indexPath.row]["name"];
                 cell.lblPrice.text = healthyFoods[indexPath.row]["price"];
                 
@@ -172,40 +192,8 @@ class FoodViewController: UIViewController, UITableViewDelegate, UITableViewData
           }
         
         return UITableViewCell();
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CartTableViewCell
-//        cell.lblName.text = healthyFoods[indexPath.row]["name"];
-//        cell.lblPrice.text = healthyFoods[indexPath.row]["price"];
-//        return cell
     }
     
     
 }
-
-
-//      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = healthyFoods[indexPath.row]["price"];
-//
-//        return cell;
-//      }
-
-
-
-//extension ViewController:UITableViewDelegate{
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("You taped me");
-//    }
-//}
-//extension ViewController:UITableViewDataSource{
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 3;
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = "Hellow World";
-//        return cell;
-//    }
-//}
+ 

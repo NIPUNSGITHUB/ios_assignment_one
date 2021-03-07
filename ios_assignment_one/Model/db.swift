@@ -9,8 +9,11 @@ import Foundation
 import Firebase
 var cartItems:[String]=[]
 public class db: NSObject {
-
-    private let context=Database.database().reference()
+    
+    lazy var background :DispatchQueue = {
+        return DispatchQueue.init(label: "background.queue",attributes: .concurrent)
+    }()
+    public let context = Database.database().reference()
     override init() {
 //        self.context.child("itemlist").child("item1").child("name").setValue("Apple");
 //        self.context.child("itemlist").child("item1").child("description").setValue("lipsum as it is sometimes known");
@@ -30,34 +33,62 @@ public class db: NSObject {
 //        FirebaseApp.configure()
 //    }
 //
-//    func setReference()
-//    {
-//
-//
-//        print("ABC")
-//    }
+    func setReference(carts:Cart)
+    {
+        print(carts)
+    }
     
     func Add(mainChild:String,slot:String,qty:Any) {
         self.context.child(mainChild).child(slot).setValue(qty);
     }
     
-    func SetValues()  {
-        
-       
-        
-       self.context.child("Cart").getData{ (error, snapshot) in
-        let dt=snapshot.value as! [String:AnyObject]
-      
-        dt.forEach({(key,val) in
-            let cart=ItemCart(name: val["name"] as! String, description:  val["description"] as! String, price:  val["price"] as! String, discount:  val["discount"] as! String, image:  val["image"] as! String)
-            cartItems.append(val as! String)
-        })
-        
-       // return a as! [String]
+    func getData() {
+        var cart:Cart!; 
+        self.background.async {
+            let group = DispatchGroup.init();
+            group.enter()
+            let ref = self.context.database.reference(withPath: "Cart");
+            ref.observe(.childAdded) { (snap) in
+
+
+                snap.ref.removeAllObservers();
+                do {
+                    
+                    //guard let dict = snap.value as? NSDictionary else {return}
+                    let data = try! JSONSerialization.data(withJSONObject: snap.value as? NSDictionary, options: .prettyPrinted)
+                    cart = try! JSONDecoder.init().decode(Cart.self, from: data)
+
+                    group.leave()
+                }
+
+            }
+            group.wait()
+
+            print(cart ?? "no")
+        }
     }
     
-    
-    
-  
-}
+//    func SetValues(completion: @escaping ([Cart]) -> Void){
+//
+//        self.context.child("Cart").getData{ (error, snapshot) in
+//
+//            if let error = error {
+//                  print(error)
+//                  completion(self.itemCart)
+//                  return
+//                }
+//            else
+//            {
+//                let dt=snapshot.value as! [String:AnyObject]
+//                dt.forEach({(key,val) in
+//                    let cart = Cart(itemId:val["itemId"] as? String, itemName: val["itemName"] as? String, qty:val["qty"] as? String)
+//                    self.itemCart.append(cart)
+//                });
+//
+//                completion(self.itemCart)
+//            }
+//
+//       }
+        
+ //   }
 }

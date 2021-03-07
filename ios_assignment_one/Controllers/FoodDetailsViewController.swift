@@ -6,10 +6,10 @@
 //
 
 import UIKit
-
+import Firebase
 class FoodDetailsViewController: UIViewController {
     let fdb = db();
-    
+   
     var itemId:String = "";
     var foodName:String = "";
     var foodDesc:String = "";
@@ -36,35 +36,44 @@ class FoodDetailsViewController: UIViewController {
     
     @IBAction func btnAddToCart(_ sender: Any) {
         //(mainChild:String,name:String,value:String)
-    
-        var data = fdb.SetValues();
-        print(data);
-        return;
-        let cartItem = [
-            [
-                "itemId":itemId,
-                "itemName":foodName,
-                "qty":1
-            ]
-            
-        ];
+        var cart:Cart!;
+        // let ref = fdb.context.database.reference(withPath: "Cart");
+      
         
-        cartItem.forEach{ (item)in
-            fdb.Add(mainChild:"Cart",slot:itemId, qty: item)
+        fdb.context.child("Cart").child(itemId).getData{ [self] (error, snapshot) in
+            if let error = error {
+                print("Error getting data \(error)")
+            }
+            else if snapshot.exists() {
+                print("Item Already Available in Firebase" )
+                print(snapshot.value)
+            }
+            else {
+
+                addToCart();
+                print("No data available")
+            }
         }
+    }
         
+    func addToCart()
+    {
+       let cartItem = [
+           [
+               "itemId":itemId,
+               "itemName":foodName,
+               "qty":1
+           ]
+
+       ];
+       
+       cartItem.forEach{ (item) in
+           fdb.Add(mainChild:"Cart",slot:itemId, qty: item)
+       }
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
+
+
